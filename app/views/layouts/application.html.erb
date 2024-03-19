@@ -14,7 +14,7 @@
   <body>
     <%= render "home/header" %>
     <div class="container">
-      <% if notice %>
+      <% if notice or alert %>
         <%= render 'layouts/alerts' %>
       <% end %>
       <br />
