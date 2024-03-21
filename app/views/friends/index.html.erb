@@ -1,23 +1,27 @@
+<% if user_signed_in? %>
+
 <h1>Friend List</h1>
 
-<table class="table">
+<table class="table table-striped-columns table-hover">
   <thead>
     <tr class="table-dark">
-      <th scope="col">First name</th>
-      <th scope="col">Last name</th>
+      <th scope="col">Name </th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Twitter</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>      
     </tr>
   </thead>
   <tbody>
   <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
     <%= render friend %>
+    <% end %>
   <% end %>
   </tbody>
 </table>
 
 <%= link_to "New friend", new_friend_path %>
+<% else %>
+  <h2>Hello World</h2>
+<% end %>
+
