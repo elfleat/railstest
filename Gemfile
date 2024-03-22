@@ -13,13 +13,14 @@ gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 gem 'devise', '~> 4.9', '>= 4.9.3'
+gem "sqlite3", "~> 1.4"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
 group :development do
   gem "web-console"
-  gem "sqlite3", "~> 1.4"
 end
 
 group :production do
